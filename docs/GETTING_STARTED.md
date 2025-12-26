@@ -18,7 +18,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 1: Generate Project Charter
 
-**Command:** `Skill: 01_pre_dev:01_generate_project_charter`
+**Command:** `/01_pre_dev:01_generate_project_charter`
 
 **Purpose:** Establish business vision, objectives, and success criteria before any technical work.
 
@@ -46,7 +46,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 2: Generate Product Requirements Document (PRD)
 
-**Command:** `Skill: 01_pre_dev:02_generate_prd`
+**Command:** `/01_pre_dev:02_generate_prd`
 
 **Purpose:** Transform business objectives into detailed, actionable product requirements.
 
@@ -76,7 +76,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 3: Generate Architecture Design Document (ADD)
 
-**Command:** `Skill: 01_pre_dev:03_generate_architecture_design`
+**Command:** `/01_pre_dev:03_generate_architecture_design`
 
 **Purpose:** Design the system architecture that will fulfill the product requirements.
 
@@ -105,7 +105,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 4: Generate Work Breakdown Structure (WBS)
 
-**Command:** `Skill: 01_pre_dev:04_generate_wbs`
+**Command:** `/01_pre_dev:04_generate_wbs`
 
 **Purpose:** Break down the architecture into concrete, implementable tasks.
 
@@ -133,7 +133,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 5: Generate Development Environment Guide
 
-**Command:** `Skill: 01_pre_dev:05_generate_dev_environment_guide`
+**Command:** `/01_pre_dev:05_generate_dev_environment_guide`
 
 **Purpose:** Document setup instructions for development, testing, and deployment environments.
 
@@ -164,7 +164,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 6: Generate Task Specification
 
-**Command:** `Skill: 02_dev:generate_task_spec`
+**Command:** `/02_dev:generate_task_spec`
 
 **Purpose:** Create detailed implementation specs for individual features before coding.
 
@@ -194,7 +194,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 7: Generate Unit Tests
 
-**Command:** `Skill: 02_dev:generate_unit_tests`
+**Command:** `/02_dev:generate_unit_tests`
 
 **Purpose:** Create unit tests for isolated components before or during implementation.
 
@@ -224,7 +224,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 8: Generate End-to-End Tests
 
-**Command:** `Skill: 02_dev:generate_e2e_tests`
+**Command:** `/02_dev:generate_e2e_tests`
 
 **Purpose:** Create integration tests that verify complete workflows.
 
@@ -247,7 +247,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 9: Generate LLM Prompt
 
-**Command:** `Skill: 02_dev:generate_prompt`
+**Command:** `/02_dev:generate_prompt`
 
 **Purpose:** Create structured, production-ready prompts for LLM integrations.
 
@@ -275,7 +275,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 10: Update PRD
 
-**Command:** `Skill: 02_dev:update_prd`
+**Command:** `/02_dev:update_prd`
 
 **Purpose:** Keep product requirements in sync with implementation reality.
 
@@ -298,7 +298,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 11: Update WBS
 
-**Command:** `Skill: 02_dev:update_wbs`
+**Command:** `/02_dev:update_wbs`
 
 **Purpose:** Track task completion, complexity changes, and timeline adjustments.
 
@@ -325,7 +325,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 12: Update Architecture Design Document (ADD)
 
-**Command:** `Skill: 03_post_dev:update_add`
+**Command:** `/03_post_dev:update_add`
 
 **Purpose:** Document architectural decisions and changes made during implementation.
 
@@ -349,7 +349,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 13: Update Project Charter
 
-**Command:** `Skill: 03_post_dev:update_project_charter`
+**Command:** `/03_post_dev:update_project_charter`
 
 **Purpose:** Document business outcomes, lessons learned, and strategic insights.
 
@@ -373,7 +373,7 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ### Step 14: Generate Case Study
 
-**Command:** `Skill: 03_post_dev:generate_case_study`
+**Command:** `/03_post_dev:generate_case_study`
 
 **Purpose:** Create a comprehensive project retrospective and knowledge artifact.
 
@@ -403,66 +403,66 @@ Each phase has dedicated Claude Code commands to guide you through conversations
 
 ```bash
 # Phase 1: Foundation (Pre-Development)
-Skill: 01_pre_dev:01_generate_project_charter    # Business vision
-Skill: 01_pre_dev:02_generate_prd                # Product requirements
-Skill: 01_pre_dev:03_generate_architecture_design # System design
-Skill: 01_pre_dev:04_generate_wbs                # Task breakdown
-Skill: 01_pre_dev:05_generate_dev_environment_guide # Setup guide
+/01_pre_dev:01_generate_project_charter    # Business vision
+/01_pre_dev:02_generate_prd                # Product requirements
+/01_pre_dev:03_generate_architecture_design # System design
+/01_pre_dev:04_generate_wbs                # Task breakdown
+/01_pre_dev:05_generate_dev_environment_guide # Setup guide
 
 # Phase 2: Implementation (Development)
 # For each task in WBS:
-Skill: 02_dev:generate_task_spec                 # Feature spec
-Skill: 02_dev:generate_unit_tests                # Tests (TDD)
+/02_dev:generate_task_spec                 # Feature spec
+/02_dev:generate_unit_tests                # Tests (TDD)
 # ... write code ...
-Skill: 02_dev:generate_e2e_tests                 # Integration tests
+/02_dev:generate_e2e_tests                 # Integration tests
 
 # Keep docs in sync:
-Skill: 02_dev:update_prd                         # When requirements change
-Skill: 02_dev:update_wbs                         # After completing tasks
+/02_dev:update_prd                         # When requirements change
+/02_dev:update_wbs                         # After completing tasks
 
 # Phase 3: Completion (Post-Development)
-Skill: 03_post_dev:update_add                    # Architecture changes
-Skill: 03_post_dev:update_project_charter        # Business outcomes
-Skill: 03_post_dev:generate_case_study           # Project retrospective
+/03_post_dev:update_add                    # Architecture changes
+/03_post_dev:update_project_charter        # Business outcomes
+/03_post_dev:generate_case_study           # Project retrospective
 ```
 
 ### Adding a Feature to Existing Project
 
 ```bash
 # 1. Spec the feature
-Skill: 02_dev:generate_task_spec
+/02_dev:generate_task_spec
 
 # 2. Write tests first (TDD)
-Skill: 02_dev:generate_unit_tests
+/02_dev:generate_unit_tests
 
 # 3. Implement the feature
 # (write code following the spec)
 
 # 4. Integration tests
-Skill: 02_dev:generate_e2e_tests
+/02_dev:generate_e2e_tests
 
 # 5. Update tracking
-Skill: 02_dev:update_wbs
+/02_dev:update_wbs
 ```
 
 ### Building AI Features
 
 ```bash
 # 1. Spec the feature
-Skill: 02_dev:generate_task_spec
+/02_dev:generate_task_spec
 
 # 2. Design the prompt
-Skill: 02_dev:generate_prompt
+/02_dev:generate_prompt
 
 # 3. Tests for LLM behavior
-Skill: 02_dev:generate_unit_tests  # Mock LLM responses
+/02_dev:generate_unit_tests  # Mock LLM responses
 # Create evals in tests/evals/ for LLM output quality
 
 # 4. Implement
 # (write code)
 
 # 5. Integration tests
-Skill: 02_dev:generate_e2e_tests
+/02_dev:generate_e2e_tests
 ```
 
 ---
@@ -600,18 +600,18 @@ docs/
 
 ```
 1. Have project idea
-2. Skill: 01_pre_dev:01_generate_project_charter
+2. /01_pre_dev:01_generate_project_charter
    → Define business case, vision, objectives
 3. Review charter, refine as needed
-4. Skill: 01_pre_dev:02_generate_prd
+4. /01_pre_dev:02_generate_prd
    → Define detailed requirements
 5. Review PRD, refine as needed
-6. Skill: 01_pre_dev:03_generate_architecture_design
+6. /01_pre_dev:03_generate_architecture_design
    → Design system architecture
 7. Review ADD, refine as needed
-8. Skill: 01_pre_dev:04_generate_wbs
+8. /01_pre_dev:04_generate_wbs
    → Break down into tasks
-9. Skill: 01_pre_dev:05_generate_dev_environment_guide
+9. /01_pre_dev:05_generate_dev_environment_guide
    → Document setup
 10. Begin development phase (pick first task from WBS)
 ```
@@ -620,21 +620,21 @@ docs/
 
 ```
 1. Pick task from WBS
-2. Skill: 02_dev:generate_task_spec
+2. /02_dev:generate_task_spec
    → Create detailed spec
-3. Skill: 02_dev:generate_unit_tests
+3. /02_dev:generate_unit_tests
    → Generate tests (TDD)
 4. Run tests: uv run pytest tests/unit/ -v
    → Should fail
 5. Implement feature following spec
 6. Run tests again
    → Should pass
-7. Skill: 02_dev:generate_e2e_tests
+7. /02_dev:generate_e2e_tests
    → Integration tests
 8. Run: uv run pytest tests/integration/ -v
    → Verify end-to-end
 9. Move spec to docs/features/
-10. Skill: 02_dev:update_wbs
+10. /02_dev:update_wbs
     → Mark task complete
 ```
 
@@ -642,9 +642,9 @@ docs/
 
 ```
 1. Identify changed requirements
-2. Skill: 02_dev:update_prd
+2. /02_dev:update_prd
    → Document changes
-3. Skill: 02_dev:update_wbs
+3. /02_dev:update_wbs
    → Adjust task breakdown
 4. Continue with development workflow
 ```
@@ -653,13 +653,13 @@ docs/
 
 ```
 1. Document reason for refactor in docs/plans/
-2. Skill: 02_dev:generate_task_spec
+2. /02_dev:generate_task_spec
    → Spec the refactoring approach
 3. Generate tests to ensure behavior preservation
 4. Implement refactor
-5. Skill: 03_post_dev:update_add
+5. /03_post_dev:update_add
    → Document architectural changes
-6. Skill: 02_dev:update_wbs
+6. /02_dev:update_wbs
    → Update task status
 ```
 
@@ -667,11 +667,11 @@ docs/
 
 ```
 1. Complete all WBS tasks
-2. Skill: 03_post_dev:update_add
+2. /03_post_dev:update_add
    → Final architecture documentation
-3. Skill: 03_post_dev:update_project_charter
+3. /03_post_dev:update_project_charter
    → Document business outcomes
-4. Skill: 03_post_dev:generate_case_study
+4. /03_post_dev:generate_case_study
    → Create comprehensive retrospective
 5. Archive project or plan next phase
 ```

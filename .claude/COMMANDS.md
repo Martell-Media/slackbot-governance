@@ -6,12 +6,12 @@ Quick reference for all available commands in this template.
 
 In Claude Code, invoke commands using the Skill tool:
 ```
-Skill: <command-name>
+/<command-name>
 ```
 
 Example:
 ```
-Skill: 01_pre_dev:01_generate_project_charter
+/01_pre_dev:01_generate_project_charter
 ```
 
 ---
@@ -430,61 +430,61 @@ Starting new project?
 
 ### Pattern: New Project (Complete)
 ```
-1. Skill: 01_pre_dev:01_generate_project_charter
-2. Skill: 01_pre_dev:02_generate_prd
-3. Skill: 01_pre_dev:03_generate_architecture_design
-4. Skill: 01_pre_dev:04_generate_wbs
-5. Skill: 01_pre_dev:05_generate_dev_environment_guide
+1. /01_pre_dev:01_generate_project_charter
+2. /01_pre_dev:02_generate_prd
+3. /01_pre_dev:03_generate_architecture_design
+4. /01_pre_dev:04_generate_wbs
+5. /01_pre_dev:05_generate_dev_environment_guide
 6. Begin development (see Pattern: Feature Development)
 ```
 
 ### Pattern: Feature Development (TDD)
 ```
 1. Pick task from WBS
-2. Skill: 02_dev:generate_task_spec
-3. Skill: 02_dev:generate_unit_tests
+2. /02_dev:generate_task_spec
+3. /02_dev:generate_unit_tests
 4. Run tests (should fail): uv run pytest tests/unit/ -v
 5. Implement feature following spec
 6. Run tests (should pass): uv run pytest tests/unit/ -v
-7. Skill: 02_dev:generate_e2e_tests
+7. /02_dev:generate_e2e_tests
 8. Run integration tests: uv run pytest tests/integration/ -v
-9. Skill: 02_dev:update_wbs (mark complete)
+9. /02_dev:update_wbs (mark complete)
 ```
 
 ### Pattern: AI Feature Development
 ```
 1. Pick task from WBS
-2. Skill: 02_dev:generate_task_spec
-3. Skill: 02_dev:generate_prompt
-4. Skill: 02_dev:generate_unit_tests (with mocked LLM)
+2. /02_dev:generate_task_spec
+3. /02_dev:generate_prompt
+4. /02_dev:generate_unit_tests (with mocked LLM)
 5. Create evals in tests/evals/ for LLM quality
 6. Implement feature
-7. Skill: 02_dev:generate_e2e_tests
-8. Skill: 02_dev:update_wbs
+7. /02_dev:generate_e2e_tests
+8. /02_dev:update_wbs
 ```
 
 ### Pattern: Requirements Changed
 ```
-1. Skill: 02_dev:update_prd (document changes)
-2. Skill: 02_dev:update_wbs (adjust tasks)
+1. /02_dev:update_prd (document changes)
+2. /02_dev:update_wbs (adjust tasks)
 3. Continue development
 ```
 
 ### Pattern: Major Refactor
 ```
-1. Skill: 02_dev:generate_task_spec (refactor approach)
-2. Skill: 02_dev:generate_unit_tests (preserve behavior)
+1. /02_dev:generate_task_spec (refactor approach)
+2. /02_dev:generate_unit_tests (preserve behavior)
 3. Implement refactor
-4. Skill: 03_post_dev:update_add (architecture changes)
-5. Skill: 02_dev:update_wbs (track completion)
+4. /03_post_dev:update_add (architecture changes)
+5. /02_dev:update_wbs (track completion)
 ```
 
 ### Pattern: Project Completion
 ```
 1. Complete all WBS tasks
-2. Skill: 03_post_dev:update_add
-3. Skill: 03_post_dev:update_project_charter
-4. Skill: 03_post_dev:generate_case_study
+2. /03_post_dev:update_add
+3. /03_post_dev:update_project_charter
+4. /03_post_dev:generate_case_study
 ```
 
 ---
@@ -507,7 +507,7 @@ Starting new project?
 
 ### Integration with Claude Code
 - Commands appear as skills in Claude Code
-- Invoke using: `Skill: <command-name>`
+- Invoke using: `/<command-name>`
 - Commands have access to project context
 - Follow command guidance - they're domain experts
 

@@ -79,7 +79,7 @@ if result is not None:
 ```bash
 # Instead of: "Add user login"
 # Do this:
-Skill: 02_dev:generate_task_spec
+/02_dev:generate_task_spec
 # Then implement based on spec
 ```
 

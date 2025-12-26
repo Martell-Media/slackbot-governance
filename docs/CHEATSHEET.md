@@ -8,37 +8,37 @@ One-page reference for common commands and workflows.
 
 ```
 Starting new project?
-  → Skill: 01_pre_dev:01_generate_project_charter
-  → Skill: 01_pre_dev:02_generate_prd
-  → Skill: 01_pre_dev:03_generate_architecture_design
-  → Skill: 01_pre_dev:04_generate_wbs
-  → Skill: 01_pre_dev:05_generate_dev_environment_guide
+  → /01_pre_dev:01_generate_project_charter
+  → /01_pre_dev:02_generate_prd
+  → /01_pre_dev:03_generate_architecture_design
+  → /01_pre_dev:04_generate_wbs
+  → /01_pre_dev:05_generate_dev_environment_guide
 
 Implementing feature from WBS?
-  → Skill: 02_dev:generate_task_spec
-  → Skill: 02_dev:generate_unit_tests
+  → /02_dev:generate_task_spec
+  → /02_dev:generate_unit_tests
   → (write code)
-  → Skill: 02_dev:generate_e2e_tests
-  → Skill: 02_dev:update_wbs
+  → /02_dev:generate_e2e_tests
+  → /02_dev:update_wbs
 
 Building AI feature?
-  → Skill: 02_dev:generate_task_spec
-  → Skill: 02_dev:generate_prompt
-  → Skill: 02_dev:generate_unit_tests
+  → /02_dev:generate_task_spec
+  → /02_dev:generate_prompt
+  → /02_dev:generate_unit_tests
   → (write code)
   → tests/evals/ for quality
 
 Requirements changed?
-  → Skill: 02_dev:update_prd
-  → Skill: 02_dev:update_wbs
+  → /02_dev:update_prd
+  → /02_dev:update_wbs
 
 Architecture changed?
-  → Skill: 03_post_dev:update_add
+  → /03_post_dev:update_add
 
 Project complete?
-  → Skill: 03_post_dev:update_add
-  → Skill: 03_post_dev:update_project_charter
-  → Skill: 03_post_dev:generate_case_study
+  → /03_post_dev:update_add
+  → /03_post_dev:update_project_charter
+  → /03_post_dev:generate_case_study
 ```
 
 ---

@@ -94,26 +94,26 @@ See [`.claude/COMMANDS.md`](.claude/COMMANDS.md) for details.
 
 ## Workflows
 
-**How to use commands:** In Claude Code, invoke commands using `Skill: <command-name>` syntax.
+**How to use commands:** In Claude Code, invoke commands using `/<command-name>` syntax.
 
-Example: `Skill: 01_pre_dev:01_generate_project_charter`
+Example: `/01_pre_dev:01_generate_project_charter`
 
 ### Starting a New Project
 ```
-1. Skill: 01_pre_dev:01_generate_project_charter    # Business vision
-2. Skill: 01_pre_dev:02_generate_prd                # Product requirements
-3. Skill: 01_pre_dev:03_generate_architecture_design # System design
-4. Skill: 01_pre_dev:04_generate_wbs                # Task breakdown
-5. Skill: 01_pre_dev:05_generate_dev_environment_guide # Setup guide
+1. /01_pre_dev:01_generate_project_charter    # Business vision
+2. /01_pre_dev:02_generate_prd                # Product requirements
+3. /01_pre_dev:03_generate_architecture_design # System design
+4. /01_pre_dev:04_generate_wbs                # Task breakdown
+5. /01_pre_dev:05_generate_dev_environment_guide # Setup guide
 ```
 
 ### Implementing a Feature (TDD)
 ```
-1. Skill: 02_dev:generate_task_spec      # Spec before code
-2. Skill: 02_dev:generate_unit_tests     # Tests first
+1. /02_dev:generate_task_spec      # Spec before code
+2. /02_dev:generate_unit_tests     # Tests first
 3. Implement feature following spec
-4. Skill: 02_dev:generate_e2e_tests      # Integration tests
-5. Skill: 02_dev:update_wbs              # Track completion
+4. /02_dev:generate_e2e_tests      # Integration tests
+5. /02_dev:update_wbs              # Track completion
 ```
 
 See [`docs/GETTING_STARTED.md`](docs/GETTING_STARTED.md) for complete workflows.
