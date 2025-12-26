@@ -1,6 +1,6 @@
 # Update Architecture Design Document
 
-READ the current ADD from `ai_docs/context/core_docs/add.md`.
+READ the current ADD from `docs/core/add.md`.
 ANALYZE the codebase to detect architectural patterns and changes.
 ENGAGE in targeted consultation to understand architectural decisions.
 UPDATE the ADD to reflect actual implementation without assumptions.
@@ -159,7 +159,7 @@ if new_services:
 
 ## Where to Save Updates
 
-**ALWAYS update in place**: `ai_docs/context/core_docs/add.md`
+**ALWAYS update in place**: `docs/core/add.md`
 
 - Preserve original design with strikethrough
 - Add implementation notes with evidence

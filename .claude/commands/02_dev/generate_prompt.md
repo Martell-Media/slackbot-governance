@@ -1,6 +1,6 @@
 # Generate LLM Prompt
 
-READ the prompt template specification in `ai_docs/context/prompt_template.md`.
+READ the prompt template specification in `docs/templates/prompt_template.md`.
 UNDERSTAND the XML-based structure and best practices for creating high-quality, reusable prompts.
 
 Your task is to create a structured prompt for the following use case:

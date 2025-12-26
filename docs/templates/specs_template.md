@@ -159,4 +159,4 @@ def test_handles_edge_case():
 
 ## Mandatory Questions
 
-- Ask the user where to store the generated specification. The default is `ai_docs/specs/<next_two-digit_sequence>_<feature_or_task_name>.md`.
+- Ask the user where to store the generated specification. The default is `docs/specs/<feature_name>_spec.md`.

@@ -6,9 +6,9 @@ Where to put documents during the development workflow.
 
 | Document Type | Location | When |
 |--------------|----------|------|
-| Project charter | `docs/core/charter.md` | Project start |
+| Project charter | `docs/core/project_charter.md` | Project start |
 | PRD | `docs/core/prd.md` | Project start |
-| Architecture | `docs/core/architecture.md` | Project start |
+| Architecture | `docs/core/add.md` | Project start |
 | Work breakdown | `docs/core/wbs.md` | Project start |
 | Task spec | `docs/specs/<feature>_spec.md` | Before coding |
 | Feature doc | `docs/features/<feature>.md` | After coding |

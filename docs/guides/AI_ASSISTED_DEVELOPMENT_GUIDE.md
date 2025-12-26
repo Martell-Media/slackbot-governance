@@ -68,41 +68,41 @@ Spec-Driven Development maintains coherence through systematic updates. Your Pro
 
 The Project Charter is your north star. It establishes the business vision, identifies stakeholders, and defines success metrics. This isn't a technical document. It focuses entirely on business outcomes and strategic objectives.
 
-To create a Project Charter, use the `/project_charter` command. The AI will engage you in a consultation that explores your business vision, market understanding, and success criteria. This isn't a form to fill out. It's an intelligent conversation that helps clarify your thinking.
+To create a Project Charter, use the `/01_pre_dev:01_generate_project_charter` command. The AI will engage you in a consultation that explores your business vision, market understanding, and success criteria. This isn't a form to fill out. It's an intelligent conversation that helps clarify your thinking.
 
 The consultation covers essential topics like target market, competitive landscape, resource constraints, and risk assessment. The AI asks follow-up questions to dive deeper into areas that need clarification. For example, if you mention cost reduction as an objective, it might ask about specific cost categories and reduction targets.
 
-The resulting document lives in `ai_docs/context/core_docs/project_charter.md`. It becomes the business foundation for all subsequent specifications.
+The resulting document lives in `docs/core/project_charter.md`. It becomes the business foundation for all subsequent specifications.
 
 #### Product Requirements: What to Build
 
 With your business vision clear, the Product Requirements Document (PRD) defines what you'll build to achieve that vision. The PRD translates business objectives into specific features, user stories, and acceptance criteria.
 
-Use the `/prd` command to start the PRD consultation. The AI builds on insights from your Project Charter, asking about user personas, user journeys, functional requirements, and non-functional requirements. This process ensures that every requirement traces back to a business objective.
+Use the `/01_pre_dev:02_generate_prd` command to start the PRD consultation. The AI builds on insights from your Project Charter, asking about user personas, user journeys, functional requirements, and non-functional requirements. This process ensures that every requirement traces back to a business objective.
 
 The PRD consultation explores edge cases, error scenarios, and data requirements that developers often overlook. It helps you think through the full user experience, not just the happy path. The result is a comprehensive requirements document that guides implementation without constraining creativity.
 
-Your PRD lives in `ai_docs/context/core_docs/prd.md` and becomes the definitive source for what your system should do.
+Your PRD lives in `docs/core/prd.md` and becomes the definitive source for what your system should do.
 
 #### Architecture Design: How to Build
 
 The Architecture Design Document (ADD) translates requirements into technical architecture. This is where you make decisions about system topology, technology stack, data flow, and integration patterns.
 
-The `/architecture_design` command initiates a technical consultation that explores different architectural approaches. The AI helps you think through trade-offs between centralized and distributed systems, synchronous and asynchronous communication, and build versus buy decisions.
+The `/01_pre_dev:03_generate_architecture_design` command initiates a technical consultation that explores different architectural approaches. The AI helps you think through trade-offs between centralized and distributed systems, synchronous and asynchronous communication, and build versus buy decisions.
 
 This consultation goes deep into technical details while maintaining focus on business requirements. If your PRD requires sub-second response times, the architecture consultation explores caching strategies, database optimization, and CDN usage. If you need to integrate with external systems, it discusses API patterns, error handling, and data synchronization.
 
-The ADD in `ai_docs/context/core_docs/add.md` becomes your technical blueprint, ensuring all developers understand the system architecture.
+The ADD in `docs/core/add.md` becomes your technical blueprint, ensuring all developers understand the system architecture.
 
 #### Work Breakdown: Tasks and Complexity
 
 The Work Breakdown Structure (WBS) transforms your architecture into actionable tasks. This isn't just a todo list. It's a structured decomposition of work with complexity ratings, dependencies, and sequencing.
 
-Use `/wbs` to create your initial task breakdown. The AI analyzes your PRD and ADD to suggest logical task groupings and sequences. It focuses on complexity rather than time estimates, recognizing that AI-assisted development changes traditional estimation models.
+Use `/01_pre_dev:04_generate_wbs` to create your initial task breakdown. The AI analyzes your PRD and ADD to suggest logical task groupings and sequences. It focuses on complexity rather than time estimates, recognizing that AI-assisted development changes traditional estimation models.
 
 Each task receives a complexity rating of Low, Medium, or High. These ratings help you plan sprints, allocate resources, and identify risks. The WBS also captures dependencies between tasks, ensuring you build features in the right order.
 
-Your WBS in `ai_docs/context/core_docs/wbs.md` becomes a living document that tracks project progress.
+Your WBS in `docs/core/wbs.md` becomes a living document that tracks project progress.
 
 ### Development Phase
 
@@ -110,9 +110,9 @@ Your WBS in `ai_docs/context/core_docs/wbs.md` becomes a living document that tr
 
 With your WBS defined, you need detailed specifications for each task. Task specifications provide implementation-level details that guide AI code generation without constraining implementation choices.
 
-The `/task_spec` command creates specifications from WBS items. It extracts context from your PRD and ADD, then asks specific questions about implementation constraints, success criteria, and integration requirements. This ensures that whoever implements the task (human or AI) has clear guidance.
+The `/02_dev:generate_task_spec` command creates specifications from WBS items. It extracts context from your PRD and ADD, then asks specific questions about implementation constraints, success criteria, and integration requirements. This ensures that whoever implements the task (human or AI) has clear guidance.
 
-Task specifications live in `ai_docs/specs/` and follow a consistent template that includes context, requirements, constraints, success criteria, and examples.
+Task specifications live in `docs/specs/` and follow a consistent template that includes context, requirements, constraints, success criteria, and examples.
 
 #### Writing Code with Specs
 
@@ -124,7 +124,7 @@ Following the conventions documented in CLAUDE.md files ensures your generated c
 
 #### Continuous Updates
 
-Development reveals new requirements, technical constraints, and better solutions. The `/update_wbs` command helps track these changes systematically. It analyzes your git commits to detect work that doesn't match WBS tasks, complexity increases, and new dependencies.
+Development reveals new requirements, technical constraints, and better solutions. The `/02_dev:update_wbs` command helps track these changes systematically. It analyzes your git commits to detect work that doesn't match WBS tasks, complexity increases, and new dependencies.
 
 This isn't a manual status update. The command examines actual development artifacts and asks targeted questions. If it detects multiple commits fixing issues in a "Low" complexity task, it might ask whether the complexity should be increased. If it finds new files without corresponding WBS tasks, it asks about the additional work.
 
@@ -158,7 +158,7 @@ Understanding system architecture is critical before making changes. Request the
 - Senior engineers familiar with the system
 - Client technical contacts
 
-If no ADD exists, you can generate one using the `/update_add` command. This analyzes the existing codebase to detect architectural patterns, then asks you targeted questions about design decisions. This reverse-engineering approach documents the current system for future developers.
+If no ADD exists, you can generate one using the `/03_post_dev:update_add` command. This analyzes the existing codebase to detect architectural patterns, then asks you targeted questions about design decisions. This reverse-engineering approach documents the current system for future developers.
 
 #### Work Breakdown Structure (Essential)
 
@@ -168,11 +168,11 @@ You need to understand planned work and dependencies. Request the WBS from:
 - Project Management
 - Team members working on related features
 
-If no WBS exists, generate one using the `/wbs` command based on the PRD and your understanding of required work. This helps organize your implementation approach.
+If no WBS exists, generate one using the `/01_pre_dev:04_generate_wbs` command based on the PRD and your understanding of required work. This helps organize your implementation approach.
 
 #### Implementation Plan (Essential)
 
-Even if the team provides high-level plans through Jira or other project management tools, create your own detailed implementation plan using spec-driven development. The `/task_spec` command helps you:
+Even if the team provides high-level plans through Jira or other project management tools, create your own detailed implementation plan using spec-driven development. The `/02_dev:generate_task_spec` command helps you:
 
 - Break down Jira tickets into detailed specifications
 - Clarify ambiguous requirements
@@ -219,10 +219,10 @@ For critical missing documentation, use intelligent update commands:
 
 ```bash
 # Generate architecture documentation from code
-/update_add "Analyze existing system architecture"
+/03_post_dev:update_add "Analyze existing system architecture"
 
 # Create WBS from existing code structure
-/wbs "Create task breakdown for planned feature additions"
+/01_pre_dev:04_generate_wbs "Create task breakdown for planned feature additions"
 ```
 
 These commands analyze the codebase and ask specific questions to help document what exists.
@@ -233,11 +233,11 @@ These commands analyze the codebase and ask specific questions to help document 
 
 When adding features to existing projects, you don't need to specify the entire system. Create targeted specifications for just the new functionality while respecting existing patterns and constraints.
 
-The `/task_spec` command works perfectly for incremental development. It extracts context from existing documentation and code, then helps you specify new features that integrate smoothly. This ensures new code follows established patterns while meeting new requirements.
+The `/02_dev:generate_task_spec` command works perfectly for incremental development. It extracts context from existing documentation and code, then helps you specify new features that integrate smoothly. This ensures new code follows established patterns while meeting new requirements.
 
 #### Intelligent Updates
 
-After implementing changes, update commands help maintain documentation accuracy. The `/update_prd` command detects when implemented features differ from documented requirements and asks about the changes. The `/update_add` command identifies new architectural patterns and asks about their purpose.
+After implementing changes, update commands help maintain documentation accuracy. The `/02_dev:update_prd` command detects when implemented features differ from documented requirements and asks about the changes. The `/03_post_dev:update_add` command identifies new architectural patterns and asks about their purpose.
 
 These updates happen through targeted questions based on evidence, not generic forms. If the update command detects a new caching layer, it asks specifically about caching strategy and invalidation patterns. If it finds new API endpoints, it asks about their purpose and authentication requirements.
 
@@ -247,7 +247,7 @@ These updates happen through targeted questions based on evidence, not generic f
 
 #### WBS Updates
 
-The `/update_wbs` command should run regularly during development. By default, it analyzes the last two days of commits, though you can specify a different range. This frequent analysis catches drift between planned and actual work before it becomes a problem.
+The `/02_dev:update_wbs` command should run regularly during development. By default, it analyzes the last two days of commits, though you can specify a different range. This frequent analysis catches drift between planned and actual work before it becomes a problem.
 
 The command detects several patterns that indicate WBS updates are needed. Multiple commits to the same file suggest increased complexity. New files without WBS tasks indicate unplanned work. TODO comments reveal discovered requirements. Each pattern triggers specific questions to understand what changed and why.
 
@@ -255,7 +255,7 @@ Regular WBS updates provide accurate project status, reveal hidden complexity, a
 
 #### PRD Evolution
 
-Requirements evolve as you build and learn. The `/update_prd` command helps track this evolution systematically. It analyzes WBS changes to identify requirement impacts, then asks targeted questions about requirement modifications.
+Requirements evolve as you build and learn. The `/02_dev:update_prd` command helps track this evolution systematically. It analyzes WBS changes to identify requirement impacts, then asks targeted questions about requirement modifications.
 
 For example, if WBS tasks related to authentication increased in complexity, the update command might ask whether authentication requirements need clarification. If new tasks appeared for error handling, it might ask about reliability requirements. This approach ensures requirements stay aligned with implementation reality.
 
@@ -263,7 +263,7 @@ For example, if WBS tasks related to authentication increased in complexity, the
 
 #### Architecture Updates
 
-At major milestones, the `/update_add` command documents how architecture evolved during implementation. It analyzes the codebase to detect architectural patterns, technology choices, and integration approaches, then asks about the rationale behind changes.
+At major milestones, the `/03_post_dev:update_add` command documents how architecture evolved during implementation. It analyzes the codebase to detect architectural patterns, technology choices, and integration approaches, then asks about the rationale behind changes.
 
 This isn't about documenting every class and function. It focuses on significant architectural decisions that future developers need to understand. If you switched from REST to GraphQL, the command detects this and asks why. If you added a caching layer, it asks about performance requirements that drove this decision.
 

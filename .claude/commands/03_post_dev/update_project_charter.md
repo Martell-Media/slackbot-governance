@@ -1,6 +1,6 @@
 # Update Project Charter
 
-READ the original project charter from `ai_docs/context/core_docs/project_charter.md`.
+READ the original project charter from `docs/core/project_charter.md`.
 ANALYZE PRD, WBS, and ADD to understand what was actually built vs planned.
 DETECT gaps between original business objectives and delivered solution.
 ASK targeted questions based on evidence of change.
@@ -150,6 +150,6 @@ Based on delivered capabilities:
 
 ## Where to Save
 
-**ALWAYS update in place**: `ai_docs/context/core_docs/project_charter.md`
+**ALWAYS update in place**: `docs/core/project_charter.md`
 
 Remember: Use the actual build artifacts to ask intelligent questions about business outcomes. The charter update should reflect what was actually delivered and its business impact.

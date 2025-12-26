@@ -1,7 +1,7 @@
 # Generate Engineering Specification
 
-READ the spec template in `ai_docs/context/specs_template.md`.
-READ the project blueprint architecture in `ai_docs/context/genai_launchpad_workflow_architecture.md` to guide your implementation plan and ensure it aligns with the overall project structure.
+READ the spec template in `docs/templates/specs_template.md`.
+READ the project architecture in `docs/core/add.md` (if it exists) to guide your implementation plan and ensure it aligns with the overall project structure.
 USE your UNDERSTANDING of the spec template to create a specification for this request:
 
 $ARGUMENTS
@@ -16,7 +16,7 @@ $ARGUMENTS
 
 4. **Generate the specification** only when you can implement the feature without any further clarification.
 
-5. Store the final specification in `ai_docs/specs/` with a descriptive filename based on the task.
+5. Store the final specification in `docs/specs/` with a descriptive filename based on the task.
 
 ## Critical Rules
 

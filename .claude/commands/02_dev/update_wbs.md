@@ -1,8 +1,8 @@
 # Update Work Breakdown Structure
 
-READ the WBS document from `ai_docs/context/core_docs/wbs.md`.
+READ the WBS document from `docs/core/wbs.md`.
 ANALYZE recent git commits to detect work done vs planned tasks.
-CHECK `ai_docs/specs/` for new or modified specifications that impact tasks.
+CHECK `docs/specs/` for new or modified specifications that impact tasks.
 UPDATE the WBS with evidence-based changes reflecting actual project state.
 
 Update WBS based on:
@@ -15,7 +15,7 @@ Default: Analyze last 2 days of commits if no commit count specified.
 ## Process
 
 1. **Read Current WBS**
-   - Use the Read tool to examine `ai_docs/context/core_docs/wbs.md`
+   - Use the Read tool to examine `docs/core/wbs.md`
    - Note existing tasks, complexity ratings, and completion status
 
 2. **Analyze Recent Commits**
@@ -110,7 +110,7 @@ Always use the actual format in the WBS document, maintaining consistency with e
 
 ## Where to Save Updates
 
-**ALWAYS update the existing WBS**: `ai_docs/context/core_docs/wbs.md`
+**ALWAYS update the existing WBS**: `docs/core/wbs.md`
 
 - NEVER create new versions or duplicate files
 - Maintain change log and decision history within the document

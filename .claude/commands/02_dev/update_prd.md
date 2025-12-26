@@ -1,7 +1,7 @@
 # Update Product Requirements Document
 
-READ the current PRD from `ai_docs/context/core_docs/prd.md`.
-ANALYZE the WBS change history in `ai_docs/context/core_docs/wbs.md`.
+READ the current PRD from `docs/core/prd.md`.
+ANALYZE the WBS change history in `docs/core/wbs.md`.
 ENGAGE in iterative consultation to understand requirement evolution.
 UPDATE the PRD based on actual project learnings without assumptions.
 
@@ -132,7 +132,7 @@ After updates, verify each PRD section:
 
 ## Where to Save Updates
 
-**ALWAYS update in place**: `ai_docs/context/core_docs/prd.md`
+**ALWAYS update in place**: `docs/core/prd.md`
 
 - Use inline comments for change tracking
 - Preserve historical context where valuable

@@ -159,7 +159,7 @@ Generate a well-structured markdown document with:
 
 ## Save Location
 
-- Default: `ai_docs/case_studies/<project_name>_case_study.md`
+- Default: `docs/case_studies/<project_name>_case_study.md`
 - Or as specified by the user
 
 Remember: A good case study tells a compelling story while providing concrete evidence of success and valuable insights for future projects.
