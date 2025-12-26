@@ -170,7 +170,7 @@ git stash pop                        # Restore stashed changes
 project/
 ├── .claude/
 │   ├── COMMANDS.md         # This guide
-│   └── commands/           # 14 Claude Code commands
+│   └── commands/           # 15 Claude Code commands
 ├── app/
 │   ├── api/                # FastAPI endpoints
 │   ├── database/           # SQLAlchemy models

@@ -1,12 +1,12 @@
 # Agentic Coding Blueprint - Project Template
 
-A complete AI-assisted development template with FastAPI backend, structured workflows, and 14 Claude Code commands.
+A complete AI-assisted development template with FastAPI backend, structured workflows, and 15 Claude Code commands.
 
 ## What This Is
 
 This template provides:
 - **Modern Python stack** (FastAPI, PostgreSQL, SQLAlchemy, Pydantic)
-- **14 Claude Code commands** for spec-driven development
+- **15 Claude Code commands** for spec-driven development
 - **Structured documentation** (charter, PRD, architecture, WBS)
 - **Complete workflows** for project lifecycle (pre-dev, dev, post-dev)
 - **Testing framework** (unit, integration, evals)
@@ -84,11 +84,12 @@ project/
 
 ## Available Commands
 
-This template includes 14 Claude Code commands for the complete project lifecycle:
+This template includes 15 Claude Code commands for the complete project lifecycle:
 
 **Pre-Development (5):** Project charter, PRD, architecture, WBS, dev environment
 **Development (6):** Task specs, prompts, unit tests, e2e tests, PRD updates, WBS updates
 **Post-Development (3):** Architecture updates, charter updates, case studies
+**Legacy (1):** generate-spec (backward compatibility)
 
 See [`.claude/COMMANDS.md`](.claude/COMMANDS.md) for details.
 
@@ -122,7 +123,7 @@ See [`docs/GETTING_STARTED.md`](docs/GETTING_STARTED.md) for complete workflows.
 
 ### Core Guides
 - **[Getting Started](docs/GETTING_STARTED.md)** - Complete workflow guide for starting projects
-- **[Commands Reference](.claude/COMMANDS.md)** - All 14 commands with usage patterns
+- **[Commands Reference](.claude/COMMANDS.md)** - All 15 commands with usage patterns
 - **[Quick Start Guide](docs/guides/QUICK_START.md)** - Decision trees for common scenarios
 - **[AI-Assisted Development](docs/guides/AI_ASSISTED_DEVELOPMENT_GUIDE.md)** - Methodology and philosophy
 - **[CLAUDE.md Usage](docs/guides/CLAUDE_MD_USAGE.md)** - Context management patterns

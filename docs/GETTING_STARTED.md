@@ -784,6 +784,6 @@ This template and workflow system transforms AI-assisted development from ad-hoc
 6. **Evidence-Based Updates** - Update docs based on implementation reality, not assumptions
 7. **Knowledge Capture** - Generate case studies to transform experience into reusable knowledge
 
-The 14 commands guide you through structured conversations that generate comprehensive documentation at each phase, ensuring AI agents have the context they need to generate high-quality code.
+The 15 commands guide you through structured conversations that generate comprehensive documentation at each phase, ensuring AI agents have the context they need to generate high-quality code.
 
 **Start with the project charter and follow the flow. Each document builds on the previous, creating a complete picture of your project from vision to implementation.**
