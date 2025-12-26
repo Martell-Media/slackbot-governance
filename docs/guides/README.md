@@ -4,6 +4,51 @@ Comprehensive guides for AI-assisted development with this template.
 
 ## Available Guides
 
+### [SECURITY_GUIDE.md](SECURITY_GUIDE.md)
+**Security considerations for AI-generated code**
+
+Critical security patterns and vulnerabilities:
+- Common vulnerabilities in AI-generated code (SQL injection, XSS, IDOR, etc.)
+- Security checklist for code review
+- Security testing patterns
+- When AI struggles with security
+- Tools and dependencies for security
+
+**Use when:** Reviewing AI-generated code, implementing security features
+
+---
+
+### [COMMON_PITFALLS.md](COMMON_PITFALLS.md)
+**Anti-patterns and mistakes to avoid**
+
+22 common pitfalls organized by scenario:
+- General AI-assisted development mistakes
+- Scenario-specific pitfalls (new projects, existing code, features, bugs, refactoring)
+- Process pitfalls
+- LLM-specific issues
+- Detection checklist and recovery strategies
+
+**Use when:** Preventing mistakes, debugging issues, improving process
+
+---
+
+### [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+**Solutions for common problems**
+
+Diagnostic steps and fixes for:
+- AI-generated code issues
+- Environment & setup problems
+- Testing failures
+- Type hint errors
+- Pydantic validation errors
+- Git issues
+- Performance problems
+- Common error messages
+
+**Use when:** Something breaks, debugging, investigating issues
+
+---
+
 ### [QUICK_START.md](QUICK_START.md)
 **Decision trees and command patterns for common scenarios**
 

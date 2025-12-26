@@ -94,6 +94,10 @@ See [`.claude/COMMANDS.md`](.claude/COMMANDS.md) for details.
 
 ## Workflows
 
+**How to use commands:** In Claude Code, invoke commands using `Skill: <command-name>` syntax.
+
+Example: `Skill: 01_pre_dev:01_generate_project_charter`
+
 ### Starting a New Project
 ```
 1. Skill: 01_pre_dev:01_generate_project_charter    # Business vision

@@ -87,3 +87,11 @@ target/
 
 # Virtual environment
 .venv/
+
+# AI-specific directories
+.cursor/                    # Cursor workspace settings
+docs/scratchpad/           # Temporary working notes (keep folder, ignore contents)
+!docs/scratchpad/.gitkeep  # Keep folder structure
+playground/**/*.db         # Temporary playground databases
+playground/**/*.sqlite     # Temporary playground databases
+.claude/scratchpad/        # Claude Code scratchpad
