@@ -106,6 +106,36 @@ Architecture guide for building AI-powered processing pipelines:
 
 ---
 
+### [multi_project_management.md](multi_project_management.md)
+**Managing multiple AI projects with shared or isolated infrastructure**
+
+Comprehensive guide for teams managing multiple projects:
+- Docker volume sharing and isolation strategies
+- Database persistence and schema isolation
+- Project-specific configuration management
+- Complete isolation vs shared infrastructure approaches
+- Alembic migration configuration for multiple projects
+- Troubleshooting multi-project setups
+- Risk assessment and best practices
+
+**Use when:** Managing multiple customer projects, multi-tenant systems, or parallel feature development
+
+---
+
+### [SPEC_DRIVEN_DEVELOPMENT_PRESENTATION.md](SPEC_DRIVEN_DEVELOPMENT_PRESENTATION.md)
+**Presentation-ready overview of spec-driven development methodology**
+
+21-slide format covering the complete workflow:
+- Why spec-driven development matters
+- The specification cascade (Charter→PRD→Architecture→WBS→Tasks)
+- Command flow with examples
+- CLAUDE.md best practices
+- Visual organization for training/onboarding
+
+**Use when:** Onboarding new team members, presenting methodology, training sessions
+
+---
+
 ## Guide Selection
 
 **New to this template?**
