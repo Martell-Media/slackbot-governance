@@ -107,7 +107,7 @@ This is a **policy operations document** — it defines how the policy is applie
 
 1. Team member or approver observes a bot violating a behavioral standard
 2. **Level 1 (Low):** Alfred DMs bot owner informally. Owner fixes it.
-3. **Level 2 (Medium):** Alfred documents and escalates to Tod. Bot owner has 48 hours to correct.
+3. **Level 2 (Medium):** Alfred formally DMs bot owner citing the policy. 48 hours to correct. If not corrected, escalates to Tod.
 4. **Level 3 (Critical):** Alfred suspends bot access immediately. Notifies Tod and bot owner.
 
 ---
