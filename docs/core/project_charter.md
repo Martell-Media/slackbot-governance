@@ -232,7 +232,7 @@ When a bot violates any behavioral standard (Section 9), the following escalatio
 
 - **Examples:** Unprompted replies to conversations, bot-to-bot interaction, repeated Level 1 violations, joining channels without authorization
 - **Action:** Project Lead formally notifies the bot owner via DM, citing the specific behavioral standard violated and referencing this policy.
-- **Resolution:** Bot owner must correct the behavior within 48 hours. If not corrected within 48 hours, the Project Lead escalates to Tod Melnyk and the bot's access may be restricted.
+- **Resolution:** Bot owner must correct the behavior within 48 hours. If not corrected, the approver may restrict the bot's access. For bots owned by senior leadership, notify Tod before restricting.
 
 ### Level 3 — Critical Severity
 
