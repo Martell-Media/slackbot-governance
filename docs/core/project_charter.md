@@ -140,7 +140,7 @@ All Slack bots and apps are classified into one of four tiers based on their beh
 
 ### Always-Decline Scopes
 
-The following scopes are always declined at minimum. The full list of 6 always-decline scopes is defined in the PRD (Section 4.2).
+The following scopes are always declined at minimum. The full list of always-decline scopes is defined in the PRD (Section 4.2).
 
 | Scope | Reason | Exception |
 |-------|--------|-----------|

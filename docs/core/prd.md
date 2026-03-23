@@ -122,6 +122,8 @@ This is the mental model approvers use for every request. It is a quick referenc
 
 Scan the scope list for auto-decline scopes. If any are present, click **Restrict** and DM the requester.
 
+**Also check for user token scopes.** Slack requests show two sections: "On behalf of the app" (bot scopes) and "On behalf of the user" (user scopes). User-scope `chat:write` lets the bot post as the actual human — same impersonation risk as `chat:write.customize`. Always decline.
+
 | Scope | Description | Action |
 |-------|------------|--------|
 | `chat:write.customize` | Send messages with any name and avatar — impersonation risk | Restrict. No exceptions. |
@@ -130,6 +132,7 @@ Scan the scope list for auto-decline scopes. If any are present, click **Restric
 | `users:read.email` | View email addresses of all workspace members — email harvesting | Restrict. Unless written justification + Tod approval. |
 | `users.profile:write` | Edit user profile information — could modify other people's profiles | Restrict. No exceptions. |
 | `team.billing:read` | View workspace billing information — sensitive financial data | Restrict. No exceptions. |
+| User-scope `chat:write` | Send messages as the actual user, not the bot — impersonation by design | Restrict. Same risk as `chat:write.customize`. |
 
 #### Step 2: Determine Tier
 
@@ -154,6 +157,7 @@ Quick gut-check before approving:
 - **`files:write` present?** — Includes delete capability. Ask: what does the bot need to upload?
 - **`im:history`, `groups:history`, or `mpim:history` present?** — Can read private conversations (DMs, private channels, group DMs). Appropriate for this bot?
 - **Weak or missing "Reason for requesting"?** — "PLEASE ALFRED" or "I want it in Slack" = red flag. Ask for a real justification.
+- **User token scopes present ("On behalf of the user")?** — Check what's listed. `identify` alone is low risk (legacy). `identify` + `chat:write` = bot posts as the human. Restrict.
 - **Requester resubmitted identical scopes after restriction?** — Restrict again. Point to the policy.
 
 #### Step 4: Act
@@ -170,7 +174,7 @@ Quick gut-check before approving:
 
 ### 4.2 Complete Slack Scope-to-Tier Mapping
 
-#### Always Decline (6 scopes)
+#### Always Decline (7 scopes)
 
 | Scope | Description | Exception |
 |-------|------------|-----------|
@@ -180,6 +184,7 @@ Quick gut-check before approving:
 | `users:read.email` | View email addresses of everyone in the workspace | Written justification + Tod approval |
 | `users.profile:write` | Edit user profiles — could modify other people's profiles | None |
 | `team.billing:read` | View workspace billing and financial information | None |
+| User-scope `chat:write` | Send messages as the actual human, not the bot — impersonation by design | None |
 
 #### Tier 1 — Observer (30 scopes)
 
@@ -259,6 +264,24 @@ Quick gut-check before approving:
 | `groups:write` | Manage private channels (create, archive, invite) | Destructive — affects private spaces |
 | `usergroups:write` | Create and modify user groups | Could alter @here/@channel membership |
 | `conversations.connect:manage` | Manage Slack Connect channels with external orgs | External org access — high risk |
+
+#### User Token Scopes
+
+Slack requests may include scopes under "On behalf of the user" — these let the app act as the human who authorized it, not as the bot. The key distinction:
+
+- **Bot-scope `chat:write`** — posts as "@FreaketonMV" or "@Apex - Jaryd" (clearly a bot)
+- **User-scope `chat:write`** — posts as "Jaryd" or "Nic" (indistinguishable from the real person)
+
+| Scope | Description | Action |
+|-------|------------|--------|
+| User-scope `identify` | View the authorizing user's identity (name, email, user ID) | Low risk alone. Legacy scope. |
+| User-scope `chat:write` | Send messages as the actual human, not the bot | **Always decline.** Same impersonation risk as `chat:write.customize`. |
+| User-scope `identify` + `chat:write` | Full impersonation — bot knows who it is and can post as them | **Always decline.** |
+| User-scope `users:read` | View workspace members on behalf of user | Low risk. Redundant with bot-scope `users:read`. |
+
+**Rule of thumb:** If the "On behalf of the user" section contains `chat:write`, restrict and ask the requester to remove it. The bot should post as itself.
+
+**Unknown user scopes:** For any user token scope not listed above, apply the unknown scope rule — treat as Tier 3 (require justification from the requester) and flag for Alfred to categorize.
 
 ---
 
@@ -406,6 +429,7 @@ For each bot, answer:
 │  ✗ users:read.email (harvest emails)            │
 │  ✗ users.profile:write (edit profiles)          │
 │  ✗ team.billing:read (billing access)           │
+│  ✗ User-scope chat:write (posts as human)       │
 │                                                 │
 │  STEP 2: WHAT TIER?                             │
 │  Read-only scopes only ──────── Tier 1 → APPROVE│
@@ -419,6 +443,8 @@ For each bot, answer:
 │  □ im:history / groups:history / mpim:history?   │
 │    (reads private conversations)                │
 │  □ Weak reason? ("PLEASE ALFRED" = no)          │
+│  □ "On behalf of the user" scopes?              │
+│    (user chat:write = posts as human = reject)  │
 │                                                 │
 │  STEP 4: ACT                                    │
 │  Tier 1-2: Approve                              │

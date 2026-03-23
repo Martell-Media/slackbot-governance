@@ -89,7 +89,7 @@ From charter Section 18 (Next Steps):
 
 ### Scope-to-Tier Mapping — COMPLETE (68 scopes)
 
-**Always Decline (6):**
+**Always Decline (7):**
 - chat:write.customize — impersonation (any name/avatar)
 - chat:write.public — post to channels app isn't in
 - channels:join — join channels without invitation
